@@ -1,0 +1,3 @@
+<% @posts.each do |post| %>
+  <%= link_to post.text, "/posts/#{post.id}" %>
+<% end %>
