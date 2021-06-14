@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, only: [:index,:show,:edit]
   before_action :ensure_correct_user, only: [:edit, :update]
+  before_action :forbid_login_user, only: [:login_form, :new]
   
   def index
     @users = User.all.order(created_at: :desc)
