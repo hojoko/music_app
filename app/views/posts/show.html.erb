@@ -1,8 +1,15 @@
 
 <%= @post.text %>
-<%= @post.created_at %>
+<%= @user.name %>
 
-<%= link_to "編集",edit_post_path(@post.id) %>
-<%= link_to "削除",post_path(@post.id), method: 'delete' %>
+
+
+
+<% if @current_user.id == @post.user_id %>
+    <%= link_to "編集",edit_post_path(@post.id) %>
+    <%= link_to "削除",post_path(@post.id), method: 'delete' %>
+<% end %>  
 
 <iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>">
+
+

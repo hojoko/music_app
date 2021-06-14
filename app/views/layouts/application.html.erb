@@ -12,10 +12,16 @@
 
   <body>
     <head>
-      <%= link_to "アカウント作成","/users/new" %>
-      <%= link_to "ユーザー一覧", "/users" %>
-      <%= link_to "新規投稿","/posts/new" %>
-      <%= link_to "投稿一覧","/posts" %>
+      <% if @current_user %>
+        <%= link_to @current_user.name,"/users/#{@current_user.id}" %>
+        <%= link_to "ユーザー一覧", "/users" %>
+        <%= link_to "新規投稿","/posts/new" %>
+        <%= link_to "投稿一覧","/posts" %>
+        <%= link_to "ログアウト", "/logout" %>
+      <% else %>
+        <%= link_to "ログイン", "/login" %>
+        <%= link_to "アカウント作成","/users/new" %>
+      <% end %>
     </head>
     <%= yield %>
   </body>

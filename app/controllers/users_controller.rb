@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, only: [:index,:show,:edit]
+  before_action :ensure_correct_user, only: [:edit, :update]
   
   def index
     @users = User.all.order(created_at: :desc)
@@ -38,6 +40,26 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to "/users"
+  end
+  
+  def login_form
+  end
+  
+  def login
+    @user = User.find_by(email: params[:email], password: params[:password])
+    if @user
+      session[:id] = @user.id
+      redirect_to "/posts"
+    else
+      @email = params[:email]
+      @password = params[:password]
+      render "login_form"
+    end
+  end
+  
+  def logout
+    session[:id] = nil
+    redirect_to "/login"
   end
   
   private
