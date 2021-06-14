@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
-    
+    @post.youtube_url = params[:post][:youtube_url].last(11) 
     if @post.save
       redirect_to "/posts"
     else
