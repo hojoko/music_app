@@ -1,3 +1,17 @@
 <% @posts.each do |post| %>
+<div>
   <%= link_to post.text, "/posts/#{post.id}" %>
+  <iframe src="https://www.youtube.com/embed/<%= post.youtube_url %>"></iframe>
+  
+  <% if post.liked_by?(@current_user) %>
+    <div>
+      <%= link_to "いいね済み", "/like/#{post.id}", method: 'delete' %><%= post.likes.count %>
+    </div>
+  <% else %>
+    <div>
+      <%= link_to "いいね", "/like/#{post.id}", method: 'post' %><%= post.likes.count %>
+    </div>
+  <% end %>
+ 
+</div>
 <% end %>

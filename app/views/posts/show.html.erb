@@ -1,15 +1,26 @@
 
-<%= @post.text %>
-<%= @user.name %>
+<div>
+    <%= @post.text %>
+    <%= @user.name %>
+    
+    <iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>"></iframe>
+    
+    <% if @post.liked_by?(@current_user) %>
+    <div>
+      <%= link_to "いいね済み", "/like/#{@post.id}", method: 'delete' %><%= @post.likes.count %>
+    </div>
+  <% else %>
+    <div>
+      <%= link_to "いいね", "/like/#{@post.id}", method: 'post' %><%= @post.likes.count %>
+    </div>
+  <% end %>
+    
+    
+    <% if @current_user.id == @post.user_id %>
+        <%= link_to "編集",edit_post_path(@post.id) %>
+        <%= link_to "削除",post_path(@post.id), method: 'delete' %>
+    <% end %>  
+</div>
 
-
-
-
-<% if @current_user.id == @post.user_id %>
-    <%= link_to "編集",edit_post_path(@post.id) %>
-    <%= link_to "削除",post_path(@post.id), method: 'delete' %>
-<% end %>  
-
-<iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>">
 
 
