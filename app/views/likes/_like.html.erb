@@ -1,0 +1,9 @@
+<% if post.liked_by?(@current_user) %>
+  <div class="like">
+    <%= link_to "いいね済み ",post_likes_path(post.id), method: 'delete', remote: true, class: "liked" %><%= post.likes.count %>
+  </div>
+<% else %>
+  <div class="like">
+    <%= link_to "いいね ", post_likes_path(post.id), method: 'post', remote: true %><%= post.likes.count %>
+  </div>
+<% end %>

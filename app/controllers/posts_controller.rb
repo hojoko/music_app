@@ -20,9 +20,9 @@ class PostsController < ApplicationController
     @post.user_id = @current_user.id
     @post.youtube_url = params[:post][:youtube_url].last(11) 
     if @post.save
-      redirect_to "/posts"
+      redirect_to posts_path
     else
-      render "new"
+      render new_post_path
     end
   end
   

@@ -1,17 +1,31 @@
-<% @posts.each do |post| %>
-<div>
-  <%= link_to post.text, "/posts/#{post.id}" %>
-  <iframe src="https://www.youtube.com/embed/<%= post.youtube_url %>"></iframe>
-  
-  <% if post.liked_by?(@current_user) %>
-    <div>
-      <%= link_to "いいね済み", "/like/#{post.id}", method: 'delete' %><%= post.likes.count %>
+<div class="container">
+  <div class="posts">
+    <% @posts.each do |post| %>
+    <div class="post">
+      <div class="a-post">
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to post.user.name, user_path(post.user) %>
+          </div>
+          <div class="post-text">
+            <% if post.text.length > 15 %>
+              <%= link_to "#{post.text.first(15)} ...",  post_path(post.id) %>
+            <% else %>
+              <%= link_to post.text,  post_path(post.id) %>
+            <% end %>
+          </div>
+          <div class="like-<%= post.id %> post-like">
+            <%= render partial: 'likes/like', locals: { post: post } %>
+          </div> 
+        </div>
+        
+        <div class="post-left">
+          <div class="youtube_url">
+            <iframe src="https://www.youtube.com/embed/<%= post.youtube_url %>" class="youtube"></iframe>
+          </div>
+        </div>
+      </div>
     </div>
-  <% else %>
-    <div>
-      <%= link_to "いいね", "/like/#{post.id}", method: 'post' %><%= post.likes.count %>
-    </div>
-  <% end %>
- 
+    <% end %>
+  </div>
 </div>
-<% end %>

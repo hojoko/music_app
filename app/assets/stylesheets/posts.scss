@@ -1,3 +1,279 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/* index */
+ .posts {
+   width: 70%;
+   margin:0 auto;
+ }
+ 
+ .post {
+   margin: 2rem;
+   height: 15rem;
+   border: 2px solid lightseagreen;
+   border-radius: 10px;
+   transition: all 0.5s ease;
+ }
+ 
+ .post:hover {
+   margin-right: 0;
+   transition: all 0.5s ease;
+   }
+ 
+ .a-post {
+   float: left;
+   width: 100%;
+   height: 100%;
+ }
+ 
+ .post-right{
+   float: right;
+   height: 74%;
+   width: 30%;
+   padding: 2rem;
+ }
+ 
+ .post-left {
+   width: 50%;
+   height: 100%;
+ }
+ 
+ .post-user-name > a {
+   text-decoration: none;
+   color: black;
+   font-weight: bold;
+   font-size: 20px;
+ }
+ 
+ .post-user-name > a:before {
+  content: "";
+  left: 60%;
+  width: 0;
+  border-bottom: 2px solid salmon;
+  position: absolute;
+  height: 4%;
+  transition: all 0.3s ease;
+ }
+ 
+ .post-user-name {
+   text-align: center;
+   margin: 1rem;
+   transition: all 0.3s ease;
+ }
+ 
+ .post-user-name > a:hover:before {
+  left: 60%;
+  width: 10%;
+  border-bottom: 2px solid salmon;
+  transition: all 0.3s ease;
+ }
+ 
+ .post-text > a {
+   text-decoration: none;
+   color: black;
+ }
+ 
+ .post-text > a:before {
+   left: 58%;
+   content: "";
+   width: 0;
+   border-bottom: 2px solid salmon;
+   transition: all 0.3s ease;
+   position: absolute;
+   height: 6%;
+ }
+ 
+ .post-text {
+   margin: 2rem 1rem;
+   transition: all 0.3s ease;
+ }
+ 
+ .post-text > a:hover:before {
+  left: 58%;
+  width: 14%;
+   border-bottom: 2px solid salmon;
+   transition: all 0.3s ease;
+ }
+ 
+ .post-like {
+   margin: 1rem;
+   text-align: right;
+   font-size: 20px;
+ }
+ 
+ .post-like > div > a {
+   text-decoration: none;
+   color: black;
+   transition: all 0.3s ease;
+ }
+ 
+ .post-like > div > a:hover {
+   color: salmon;
+   transition: all 0.3s ease;
+ }
+ 
+ .youtube_url {
+   height: 100%;
+ }
+ 
+ .youtube {
+   margin: 2.7rem;
+ }
+ 
+ 
+ /*  new */
+ 
+ .new-post {
+   width: 70%;
+   margin: 5rem auto;
+ }
+ 
+ .new-youtube {
+   width: 60%;
+   margin: 20% 0 0 25%;
+ }
+ 
+ .new-youtube-input > input,.field_with_errors > input {
+   padding: 0.5rem;
+   border: none;
+   width: 70%;
+   border-bottom: 1px solid black;
+   position: relative;
+ }
+ 
+ .new-youtube-input:before {
+   content: '';
+   width: 0;
+   height: 2rem;
+   border-bottom: 2px solid black;
+   transition: all 0.3s ease;
+   position: absolute;
+ }
+ 
+ .new-youtube-input > input:focus,.field_with_errors > input:focus{
+   outline: none;
+   border-bottom: 3px solid salmon;
+ }
+ 
+ .new-youtube-input:hover:before {
+   width: 21.7%;
+   transition: all 0.3s ease;
+   border-bottom: 2px solid salmon;
+ }
+ 
+ .new-post-text {
+   width: 60%;
+   margin: 10% 0 0 25%;
+ }
+ 
+ .new-post-input > textarea,.field_with_errors > textarea {
+  width: 70%;
+  padding: 0.5em;
+  font-size: 20px;
+  transition: all 0.5s ease;
+ }
+ 
+ .new-post-input > textarea:focus,.field_with_errors > textarea:focus {
+  outline: none;
+  border: 1px solid salmon;
+ }
+ 
+ .new-post-input > textarea:hover {
+  border: 1px solid salmon;
+  transition: all 0.5s ease;
+ }
+ 
+ .submit {
+  margin: 5rem 14rem;
+  width: 30%;
+  padding: 0.5rem;
+  background: none;
+  color: salmon;
+  border: 1px solid salmon;
+  transition: all 0.3s ease;
+  font-size: 20px;
+ }
+ 
+ .submit:hover {
+  background: salmon;
+  color: white;
+  transition: all 0.3s ease;
+ }
+ 
+ /* show */
+ .show-post {
+   margin: 2rem;
+   height: 18rem;
+   border: 2px solid lightseagreen;
+   border-radius: 10px;
+   transition: all 0.5s ease;
+ }
+ 
+ .show-post-right{
+   float: right;
+   height: 78%;
+   width: 40%;
+   margin: 2rem;
+ }
+ 
+ .show-youtube-url {
+  margin: 2rem;
+  height: 78%;
+ }
+ 
+ .show-youtube {
+  width: 100%;
+  height: 100%;
+ }
+ 
+
+ .show-post-user-name > a {
+   text-decoration: none;
+   color: black;
+   font-weight: bold;
+   font-size: 20px;
+ }
+ 
+ .show-post-user-name > a:before {
+  content: "";
+  left: 62%;
+  width: 0;
+  border-bottom: 2px solid salmon;
+  position: absolute;
+  height: 4%;
+  transition: all 0.3s ease;
+ }
+ 
+ .show-post-user-name {
+   text-align: center;
+   margin: 1rem;
+   transition: all 0.3s ease;
+ }
+ 
+ .show-post-user-name > a:hover:before {
+  left: 62%;
+  width: 10%;
+  border-bottom: 2px solid salmon;
+  transition: all 0.3s ease;
+ }
+ 
+ .edit {
+  display: inline-block;
+  border: 1px solid salmon;
+  border-radius: 5px;
+  color: salmon;
+  width: 40%;
+  text-align: center;
+  padding: 0.3rem;
+  float: left;
+  margin: 2rem 0.5rem;
+  transition: all 0.5s ease;
+ }
+ 
+ .edit:hover {
+  background-color: salmon;
+  color: white;
+  transition: all 0.5s ease;
+ }

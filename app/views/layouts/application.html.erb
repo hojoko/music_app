@@ -11,18 +11,21 @@
   </head>
 
   <body>
-    <head>
-      <% if @current_user %>
-        <%= link_to @current_user.name,"/users/#{@current_user.id}" %>
-        <%= link_to "ユーザー一覧", "/users" %>
-        <%= link_to "新規投稿","/posts/new" %>
-        <%= link_to "投稿一覧","/posts" %>
-        <%= link_to "ログアウト", "/logout" %>
-      <% else %>
-        <%= link_to "ログイン", "/login" %>
-        <%= link_to "アカウント作成","/users/new" %>
-      <% end %>
-    </head>
+    <header>
+      <div class="navbar">
+        <% if @current_user %>
+          <%= link_to @current_user.name,"/users/#{@current_user.id}", class: "nav" %>
+          <%= link_to "ユーザー一覧", "/users", class: "nav"%>
+          <%= link_to "新規投稿","/posts/new", class: "nav" %>
+          <%= link_to "投稿一覧","/posts", class: "nav" %>
+          <%= link_to "ログアウト", "/logout", class: "nav" %>
+        <% else %>
+          <%= link_to "ログイン", "/login", class: "nav" %>
+          <%= link_to "アカウント作成","/users/new", class: "nav" %>
+        <% end %>
+      </div>
+      
+    </header>
     <%= yield %>
   </body>
 </html>

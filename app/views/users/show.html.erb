@@ -1,7 +1,16 @@
 <%= @user.name %>
-<%= @user.email %>
+
 
 <% if @current_user.id == @user.id %>
   <%= link_to "編集",edit_user_path(@user.id) %>
   <%= link_to "削除",user_path(@user.id), method: 'delete'%>
 <% end %>
+
+<% @posts.each do |post| %>
+  <div>
+    <%= link_to post.text, post_path(post.id) %>
+  </div>
+  
+  <iframe src="https://www.youtube.com/embed/<%= post.youtube_url %>"></iframe>
+<% end %>
+
