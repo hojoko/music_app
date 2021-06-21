@@ -1,12 +1,41 @@
-<%= form_with model: @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  
-  <%= f.submit "アカウント作成" %>
-<% end %>
+<div class="container">
+  <div class="new-post new-account">
+    <%= form_with model: @user do |f| %>
+      
+      <div class="new-user">
+        <div class="new-youtube-label">
+          <%= f.label :name, "名前" %>
+        </div>
+        <div class="new-youtube-input">
+          <%= f.text_field :name %>
+        </div>
+      </div>
+      
+      
+      <div class="new-user">
+        <div class="new-youtube-label">
+          <%= f.label :email %>
+        </div>
+        <div class="new-youtube-input">
+          <%= f.email_field :email %>
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="new-user">
+        <div class="new-youtube-label">
+          <%= f.label :password %>
+        </div>
+        <div class="new-youtube-input">
+          <%= f.password_field :password %>
+        </div>
+      </div>
+     
+      
+      
+      <%= f.submit "アカウント作成", class: "btn submit" %>
+    <% end %>
+  </div>
+</div>

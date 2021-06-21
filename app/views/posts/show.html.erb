@@ -1,31 +1,32 @@
-<div class="container">
-    <div class="show-post">
-        <div class="show-post-right">
-            <div class="show-post-user-name">
-                <%= link_to @user.name, user_path(@user) %>
+<div class="background-92vh">    
+    <div class="container">
+        <div class="show-post">
+            <div class="show-post-right">
+                <div class="show-post-user-name">
+                    <%= link_to @user.name, user_path(@user) %>
+                </div>
+                
+                <div class="show-post-text">
+                    <%= @post.text %>
+                </div>
+            
+                <div class="like-<%= @post.id %> post-like show-post-like">
+                  <%= render partial: 'likes/like', locals: { post: @post } %>
+                </div>
+                <% if @current_user.id == @post.user_id %>
+                    <%= link_to "編集",edit_post_path(@post.id), class: "btn edit" %>
+                    <%= link_to "削除",post_path(@post.id), method: 'delete', class: "btn destroy" %>
+                <% end %> 
             </div>
             
-            <div class="show-post-text">
-                <%= @post.text %>
-            </div>
-            
-            <div class="like-<%= @post.id %> post-like">
-              <%= render partial: 'likes/like', locals: { post: @post } %>
-            </div>
-            
-            <% if @current_user.id == @post.user_id %>
-                <%= link_to "編集",edit_post_path(@post.id), class: "btn edit" %>
-                <%= link_to "削除",post_path(@post.id), method: 'delete', class: "btn edit" %>
-            <% end %> 
-        </div>
-        
-        <div class="post-left">
-            <div class="show-youtube-url">
-                <iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>" class="show-youtube"></iframe>
+            <div class="post-left">
+                <div class="show-youtube-url">
+                    <iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>" class="show-youtube"></iframe>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
+    
+    
+    

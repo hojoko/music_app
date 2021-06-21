@@ -1,10 +1,29 @@
-<%= form_with url: { action: :login } do |f| %>
-  
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  
-  <%= f.submit "ログイン" %>
-<% end %>
+<div class="container">
+  <div class="login">
+    <%= form_with url: { action: :login } do |f| %>
+      
+      <div class="new-youtube">
+        <div class="new-youtube-label">
+          <%= f.label :email %>
+        </div>
+        <div class="new-youtube-input">
+          <%= f.email_field :email %>
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="new-youtube">
+        <div class="new-youtube-label">
+          <%= f.label :password %>
+        </div>
+        <div class="new-youtube-input">
+          <%= f.password_field :password %>
+        </div>
+      </div>
+      
+      <%= f.submit "ログイン", class: "btn submit" %>
+    <% end %>
+  </div>
+</div>

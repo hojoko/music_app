@@ -1,16 +1,43 @@
-<%= @user.name %>
-
-
-<% if @current_user.id == @user.id %>
-  <%= link_to "編集",edit_user_path(@user.id) %>
-  <%= link_to "削除",user_path(@user.id), method: 'delete'%>
-<% end %>
-
-<% @posts.each do |post| %>
-  <div>
-    <%= link_to post.text, post_path(post.id) %>
+<div class="container">
+  <div class="show-user">
+    <div class="show-user-name">
+      <%= @user.name %>
+    </div>
+    
+    <div class="user-show-btn">
+      <% if @current_user.id == @user.id %>
+        <%= link_to "編集",edit_user_path(@user.id), class: "btn edit user-edit" %>
+        <%= link_to "削除",user_path(@user.id), method: 'delete', class: "btn destroy user-destroy" %>
+      <% end %>
+    </div>
+  </div>
+    
+    
+  <div class="posts">
+      <% @posts.each do |post| %>
+        <div class="post">
+          <div class="a-post">
+            <div class="user-right">
+              <div class="user-text">
+                <% if post.text.length > 15 %>
+                  <%= link_to "#{post.text.first(15)} ...",  post_path(post.id) %>
+                <% else %>
+                  <%= link_to post.text, post_path(post.id) %>
+                <% end %>
+              </div>
+              <div class="like-<%= post.id %> post-like user-like">
+                <%= render partial: 'likes/like', locals: { post: post } %>
+              </div> 
+            </div>
+        
+           <div class="post-left">
+             <div class="youtube-url user-youtube">
+              <iframe src="https://www.youtube.com/embed/<%= post.youtube_url %>" class="youtube"></iframe>
+             </div>
+           </div>
+          </div>
+        </div>
+      <% end %>
   </div>
   
-  <iframe src="https://www.youtube.com/embed/<%= post.youtube_url %>"></iframe>
-<% end %>
-
+</div>

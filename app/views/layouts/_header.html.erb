@@ -1,0 +1,15 @@
+<header>
+  <div class="navbar">
+    <% if @current_user %>
+      <%= link_to @current_user.name, user_path(@current_user), class: "nav" %>
+      <%= link_to "ユーザー一覧", users_path, class: "nav"%>
+      <%= link_to "新規投稿", new_post_path, class: "nav" %>
+      <%= link_to "投稿一覧", posts_path, class: "nav" %>
+      <%= link_to "ログアウト", logout_path, class: "nav" %>
+    <% else %>
+      <%= link_to "ログイン", login_path, class: "nav" %>
+      <%= link_to "アカウント作成", new_user_path, class: "nav" %>
+    <% end %>
+  </div>
+  
+</header>

@@ -1,3 +1,117 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.users {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.user {
+  position: relative;
+  margin: 2.5rem 3rem;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  height: 2rem;
+}
+
+.user:hover {
+   margin-right: 0;
+   transition: all 0.5s ease;
+}
+
+.user-name {
+  position: absolute;
+  width: 106%;
+  text-decoration: none;
+  color: black;
+  padding: 1rem 1.5rem;
+  border: 2px solid lightseagreen;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  background: rgba(249,255,252,0.9);
+}
+
+.user-name:hover {
+  color: salmon;
+  transition: all 0.5s ease;
+}
+
+/* show */
+
+.show-user {
+  height: 10rem;
+  border-radius: 10px;
+}
+
+.user-youtube {
+  height: 100%;
+}
+
+.user-right{
+  float: right;
+  height: 74%;
+  width: 40%;
+  padding: 2rem;
+ }
+ 
+ .user-text {
+   margin: 4rem 0 2rem;
+ }
+ 
+ .user-text > a {
+   text-decoration: none;
+   color: black;
+ }
+ 
+ .user-text > a:before {
+  content: "";
+  width: 0;
+  left: 54%;
+  border-bottom: 2px solid salmon;
+  transition: all 0.3s ease;
+  position: absolute;
+  height: 2rem;
+ }
+ 
+ .user-text > a:hover:before {
+   left: 54%;
+   width: 23%;
+   transition: all 0.3s ease;
+ }
+ 
+.show-user-name {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+.user-show-btn {
+  position: relative;
+  height: 40%;
+}
+
+.user-edit {
+  width: 10rem;
+  left: 30%;
+}
+
+.user-destroy {
+  width: 10rem;
+  right: 30%;
+}
+
+/* new */
+.new-account {
+  border: 2px solid lightseagreen;
+  border-radius: 5px;
+  background: rgba(249,255,252,0.8);
+  padding: 2rem 0;
+}
+
+.new-user {
+  width: 75%;
+  margin: 10% 0 0 20%;
+}

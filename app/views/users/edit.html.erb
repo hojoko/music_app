@@ -1,9 +1,29 @@
-<%= form_with model: @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  
-  <%= f.submit "更新" %>
-<% end %>
+<div class="background-92vh">
+  <div class="container">
+    <div class="new-post">
+      <%= form_with model: @user do |f| %>
+        
+        <div class="new-youtube">
+          <div class="new-youtube-label">
+            <%= f.label :name, "名前" %>
+          </div>
+          <div class="new-youtube-input">
+            <%= f.text_field :name %>
+          </div>
+        </div>
+        
+        
+        <div class="new-youtube">
+          <div class="new-youtube-label">
+            <%= f.label :email %>
+          </div>
+          <div class="new-youtube-input">
+            <%= f.email_field :email %>
+          </div>
+        </div>
+        
+        <%= f.submit "更新", class: "btn submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>

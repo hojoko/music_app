@@ -11,21 +11,16 @@
   </head>
 
   <body>
-    <header>
-      <div class="navbar">
-        <% if @current_user %>
-          <%= link_to @current_user.name,"/users/#{@current_user.id}", class: "nav" %>
-          <%= link_to "ユーザー一覧", "/users", class: "nav"%>
-          <%= link_to "新規投稿","/posts/new", class: "nav" %>
-          <%= link_to "投稿一覧","/posts", class: "nav" %>
-          <%= link_to "ログアウト", "/logout", class: "nav" %>
-        <% else %>
-          <%= link_to "ログイン", "/login", class: "nav" %>
-          <%= link_to "アカウント作成","/users/new", class: "nav" %>
-        <% end %>
+    <% if current_page?(new_post_path) || current_page?(new_user_path) || current_page?(login_path) %>
+      <div class="background-100vh">
+        <%= render 'layouts/header' %>
+        <%= yield %>
       </div>
-      
-    </header>
-    <%= yield %>
+    <% else %>
+      <div class="background">
+        <%= render 'layouts/header' %>
+        <%= yield %>
+      </div>
+    <% end %>
   </body>
 </html>

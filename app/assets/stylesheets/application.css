@@ -18,11 +18,41 @@
 body {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .container {
   width:70%;
-  margin: 0 auto;
+  margin: 5rem auto;
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url("/pic1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.background-100vh {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("/pic1.jpg");
+  background-size: cover;
+}
+.background-92vh {
+  position: absolute;
+  width: 100vw;
+  height: 92vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("/pic1.jpg");
+  background-size: cover;
 }
 
 /* navbar */
@@ -96,4 +126,14 @@ header {
 
 .btn {
   text-decoration: none;
+  background: rgba(255,244,244,0.9);
+}
+
+.login {
+  width: 70%;
+  margin: 5rem auto;
+  border: 2px solid lightseagreen;
+  border-radius: 5px;
+  padding-bottom: 4rem;
+  background: rgba(249,255,252,0.8);
 }

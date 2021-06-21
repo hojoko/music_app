@@ -5,22 +5,23 @@
 
 /* index */
  .posts {
-   width: 70%;
-   margin:0 auto;
+   width: 90%;
+   margin: 0 auto;
  }
  
  .post {
-   margin: 2rem;
+   margin: 2rem 3rem;
    height: 15rem;
    border: 2px solid lightseagreen;
    border-radius: 10px;
    transition: all 0.5s ease;
+   background: rgba(249,255,252,0.9);
  }
  
  .post:hover {
    margin-right: 0;
    transition: all 0.5s ease;
-   }
+ }
  
  .a-post {
    float: left;
@@ -31,7 +32,7 @@
  .post-right{
    float: right;
    height: 74%;
-   width: 30%;
+   width: 40%;
    padding: 2rem;
  }
  
@@ -49,11 +50,11 @@
  
  .post-user-name > a:before {
   content: "";
-  left: 60%;
+  left: 62%;
   width: 0;
   border-bottom: 2px solid salmon;
   position: absolute;
-  height: 4%;
+  height: 1.6%;
   transition: all 0.3s ease;
  }
  
@@ -64,7 +65,7 @@
  }
  
  .post-user-name > a:hover:before {
-  left: 60%;
+  left: 62%;
   width: 10%;
   border-bottom: 2px solid salmon;
   transition: all 0.3s ease;
@@ -76,13 +77,13 @@
  }
  
  .post-text > a:before {
-   left: 58%;
+   left: 56%;
    content: "";
    width: 0;
    border-bottom: 2px solid salmon;
    transition: all 0.3s ease;
    position: absolute;
-   height: 6%;
+   height: 1.6%;
  }
  
  .post-text {
@@ -91,8 +92,8 @@
  }
  
  .post-text > a:hover:before {
-  left: 58%;
-  width: 14%;
+  left: 56%;
+  width: 21%;
    border-bottom: 2px solid salmon;
    transition: all 0.3s ease;
  }
@@ -119,7 +120,8 @@
  }
  
  .youtube {
-   margin: 2.7rem;
+   margin: 2rem;
+   height: 71%;
  }
  
  
@@ -131,8 +133,8 @@
  }
  
  .new-youtube {
-   width: 60%;
-   margin: 20% 0 0 25%;
+   width: 75%;
+   margin: 15% 0 0 20%;
  }
  
  .new-youtube-input > input,.field_with_errors > input {
@@ -158,20 +160,20 @@
  }
  
  .new-youtube-input:hover:before {
-   width: 21.7%;
+   width: 26.9%;
    transition: all 0.3s ease;
-   border-bottom: 2px solid salmon;
+   border-bottom: 3px solid salmon;
  }
  
  .new-post-text {
-   width: 60%;
-   margin: 10% 0 0 25%;
+   width: 75%;
+   margin: 10% 0 0 20%;
  }
  
  .new-post-input > textarea,.field_with_errors > textarea {
   width: 70%;
+  height: 6rem;
   padding: 0.5em;
-  font-size: 20px;
   transition: all 0.5s ease;
  }
  
@@ -186,7 +188,7 @@
  }
  
  .submit {
-  margin: 5rem 14rem;
+  margin: 5rem 14rem 0;
   width: 30%;
   padding: 0.5rem;
   background: none;
@@ -205,22 +207,25 @@
  /* show */
  .show-post {
    margin: 2rem;
-   height: 18rem;
+   height: 24rem;
    border: 2px solid lightseagreen;
    border-radius: 10px;
    transition: all 0.5s ease;
+   background: rgba(249,255,252,0.9);
  }
  
  .show-post-right{
-   float: right;
-   height: 78%;
-   width: 40%;
-   margin: 2rem;
+  float: right;
+  height: 88%;
+  width: 40%;
+  margin: 2rem 2rem 1rem;
+  position: relative;
  }
  
  .show-youtube-url {
-  margin: 2rem;
-  height: 78%;
+  margin: 4.2rem 2rem;
+  height: 65%;
+  width: 95%;
  }
  
  .show-youtube {
@@ -238,11 +243,11 @@
  
  .show-post-user-name > a:before {
   content: "";
-  left: 62%;
+  left: 35%;
   width: 0;
   border-bottom: 2px solid salmon;
   position: absolute;
-  height: 4%;
+  height: 9%;
   transition: all 0.3s ease;
  }
  
@@ -253,13 +258,20 @@
  }
  
  .show-post-user-name > a:hover:before {
-  left: 62%;
-  width: 10%;
+  left: 35%;
+  width: 30%;
   border-bottom: 2px solid salmon;
   transition: all 0.3s ease;
  }
  
+ .show-post-like {
+  position: absolute;
+  bottom: 3rem;
+  right: 1rem;
+ }
+ 
  .edit {
+  position: absolute;
   display: inline-block;
   border: 1px solid salmon;
   border-radius: 5px;
@@ -268,11 +280,35 @@
   text-align: center;
   padding: 0.3rem;
   float: left;
-  margin: 2rem 0.5rem;
+  margin: 0.5rem;
   transition: all 0.5s ease;
+  bottom: 0;
+  left: 1.5rem;
  }
  
  .edit:hover {
+  background-color: salmon;
+  color: white;
+  transition: all 0.5s ease;
+ }
+ 
+ .destroy {
+  position: absolute;
+  display: inline-block;
+  border: 1px solid salmon;
+  border-radius: 5px;
+  color: salmon;
+  width: 40%;
+  text-align: center;
+  padding: 0.3rem;
+  float: left;
+  margin: 0.5rem;
+  transition: all 0.5s ease;
+  bottom: 0;
+  right: 0;
+ }
+ 
+ .destroy:hover {
   background-color: salmon;
   color: white;
   transition: all 0.5s ease;
