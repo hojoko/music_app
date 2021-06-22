@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="new-post new-account">
+  <div class="new-post">
     <%= form_with model: @user do |f| %>
       
       <div class="new-user">
         <div class="new-youtube-label">
-          <%= f.label :name, "名前" %>
+          <%= f.label :name %>
         </div>
         <div class="new-youtube-input">
           <%= f.text_field :name %>
@@ -14,19 +14,17 @@
       
       <div class="new-user">
         <div class="new-youtube-label">
-          <%= f.label :email %>
+          <%= f.label :email %>　※登録済みのEmailは使用できません。
         </div>
         <div class="new-youtube-input">
           <%= f.email_field :email %>
         </div>
       </div>
-      
-      
-      
+
       
       <div class="new-user">
         <div class="new-youtube-label">
-          <%= f.label :password %>
+          <%= f.label :password %>　※6字以上で入力してください。
         </div>
         <div class="new-youtube-input">
           <%= f.password_field :password %>

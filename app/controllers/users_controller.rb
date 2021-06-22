@@ -14,15 +14,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to "/users"
+      session[:id] = @user.id
+      redirect_to posts_path
     else
-      render "new"
+      flash.now[:alert] = "Name,Email,Passwordのいずれかが正しくありません"
+      render 'new'
     end
   end
   
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.order(created_at: :desc)
+    @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(10)
   end
   
   def edit
@@ -32,8 +34,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to "/users"
+      redirect_to users_path
     else
+      flash.now[:alert] = "Name,Emailのいずれかが正しくありません"
       render :edit
     end
   end
@@ -41,7 +44,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to "/users"
+    redirect_to users_path
   end
   
   def login_form
@@ -51,17 +54,18 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email], password: params[:password])
     if @user
       session[:id] = @user.id
-      redirect_to "/posts"
+      redirect_to posts_path
     else
       @email = params[:email]
       @password = params[:password]
+      flash.now[:alert] = "Email,Passwordのいずれかが正しくありません"
       render "login_form"
     end
   end
   
   def logout
     session[:id] = nil
-    redirect_to "/login"
+    redirect_to login_path
   end
   
   private

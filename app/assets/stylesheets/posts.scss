@@ -54,7 +54,7 @@
   width: 0;
   border-bottom: 2px solid salmon;
   position: absolute;
-  height: 1.6%;
+  height: 2rem;
   transition: all 0.3s ease;
  }
  
@@ -67,7 +67,6 @@
  .post-user-name > a:hover:before {
   left: 62%;
   width: 10%;
-  border-bottom: 2px solid salmon;
   transition: all 0.3s ease;
  }
  
@@ -83,7 +82,7 @@
    border-bottom: 2px solid salmon;
    transition: all 0.3s ease;
    position: absolute;
-   height: 1.6%;
+   height: 2rem;
  }
  
  .post-text {

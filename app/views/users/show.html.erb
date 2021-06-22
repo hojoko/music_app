@@ -14,6 +14,7 @@
     
     
   <div class="posts">
+    <%= paginate @posts %>
       <% @posts.each do |post| %>
         <div class="post">
           <div class="a-post">
@@ -38,6 +39,7 @@
           </div>
         </div>
       <% end %>
+    <%= paginate @posts %>
   </div>
   
 </div>

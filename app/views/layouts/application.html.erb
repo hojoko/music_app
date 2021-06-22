@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
+    
+    <script src="https://kit.fontawesome.com/53d883e4e5.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,11 +16,13 @@
     <% if current_page?(new_post_path) || current_page?(new_user_path) || current_page?(login_path) %>
       <div class="background-100vh">
         <%= render 'layouts/header' %>
+        <%= render 'layouts/flash' %>
         <%= yield %>
       </div>
     <% else %>
       <div class="background">
         <%= render 'layouts/header' %>
+        <%= render 'layouts/flash' %>
         <%= yield %>
       </div>
     <% end %>

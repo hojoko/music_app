@@ -7,12 +7,14 @@ class ApplicationController < ActionController::Base
   
   def authenticate_user
     if @current_user == nil
+      flash[:alert] = "ログインしてください"
       redirect_to '/login'
     end
   end
   
   def forbid_login_user
     if @current_user
+      flash[:notice] = "ログインしています"
       redirect_to "/posts"
     end
   end
@@ -20,6 +22,7 @@ class ApplicationController < ActionController::Base
   
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
+      flash[:alert] = "権限がありません"
       redirect_to "/posts"
     end
   end
