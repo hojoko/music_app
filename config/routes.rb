@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root "posts#index"
+  root "top#index"
   get "/login" => "users#login_form"
   post "/login" => "users#login"
   get "logout" => "users#logout"
