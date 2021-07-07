@@ -64,3 +64,4 @@ gem 'jquery-rails'
 gem 'bcrypt', '3.1.13'
 gem 'kaminari'
 
+#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 

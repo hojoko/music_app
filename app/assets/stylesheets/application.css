@@ -233,9 +233,9 @@ header {
   }
   
   .navbar2 {
-  float: right;
-  margin:1rem 1rem 0 1rem;
-}
+    float: right;
+    margin:1rem 1rem 0 1rem;
+  }
   
   .nav2 {
     float: left;
@@ -257,6 +257,7 @@ header {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     transition: all 0.3s ease;
+    z-index: 100;
   }
   
   .sp-navbar {
@@ -273,6 +274,19 @@ header {
   }
   
   .fa-bars {
+   color: white;
+   position: absolute;
+   right: 1.5rem;
+   top: 1.3rem;
+   z-index: 1;
+  }
+  
+  .lg {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .fa-times {
    color: white;
    position: absolute;
    right: 1.5rem;
