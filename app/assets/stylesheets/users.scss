@@ -166,21 +166,21 @@
   }
   
   .user-show-btn {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 50%;
   }
   
   .user-edit {
-    position: relative;
+    position: absolute;
     width: 30%;
-    transform: translateX(30%);
+    left: 10%;
   }
   
   .user-destroy {
-    position: relative;
+    position: absolute;
     width: 30%;
-    transform: translateX(30%);
+    right: 10%;
   }
   
   .user-text {
