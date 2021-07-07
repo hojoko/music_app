@@ -14,7 +14,7 @@
       
       <div class="new-user">
         <div class="new-youtube-label">
-          <%= f.label :email %>　※登録済みのEmailは使用できません。
+          <%= f.label :email %>　<span class="label">※登録済みのEmailは使用できません。</span>
         </div>
         <div class="new-youtube-input">
           <%= f.email_field :email %>
@@ -24,7 +24,7 @@
       
       <div class="new-user">
         <div class="new-youtube-label">
-          <%= f.label :password %>　※6字以上で入力してください。
+          <%= f.label :password %>　<span class="label">※6字以上で入力してください。</span>
         </div>
         <div class="new-youtube-input">
           <%= f.password_field :password %>

@@ -5,7 +5,7 @@
       
         <div class="new-youtube">
           <div class="new-youtube-label">
-            <%= f.label :youtube_url,"YouTubeのURL　※11文字以上で入力してください" %>
+            <%= f.label :youtube_url,"YouTubeのURL" %> <span class="label">※11文字以上で入力してください</span>
           </div>
           <div class="new-youtube-input">
             <%= f.text_field :youtube_url %>
@@ -14,7 +14,7 @@
       
         <div class="new-post-text">
           <div class="new-post-text-label">
-            <%= f.label :text, "コメント　※1~140字で入力してください" %>
+            <%= f.label :text, "コメント" %> <span class="label">※1~140字で入力してください</span>
           </div>
           <div class="new-post-input">
             <%= f.text_area :text %>

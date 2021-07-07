@@ -1,16 +1,34 @@
 <header>
   <div class="navbar">
     <% if @current_user %>
-      <%= link_to @current_user.name, user_path(@current_user), class: "nav" %>
-      <%= link_to "ユーザー一覧", users_path, class: "nav"%>
-      <%= link_to "新規投稿", new_post_path, class: "nav" %>
-      <%= link_to "投稿一覧", posts_path, class: "nav" %>
-      <%= link_to "ログアウト", logout_path, class: "nav" %>
+      <i class="fas fa-bars fa-lg"></i>
+      <div class="sp-navbar">
+        <%= link_to @current_user.name, user_path(@current_user), class: "nav" %>
+        <%= link_to "ユーザー一覧", users_path, class: "nav"%>
+        <%= link_to "新規投稿", new_post_path, class: "nav" %>
+        <%= link_to "投稿一覧", posts_path, class: "nav" %>
+        <%= link_to "ログアウト", logout_path, class: "nav" %>
+      </div>
     <% else %>
-      <%= link_to "Musicolor", root_path, class: "nav nav-home" %>
-      <%= link_to "ログイン", login_path, class: "nav" %>
-      <%= link_to "アカウント作成", new_user_path, class: "nav" %>
+      <div class="navbar2">
+        <%= link_to "Musicolor", root_path, class: "nav2 nav-home" %>
+        <%= link_to "ログイン", login_path, class: "nav2" %>
+        <%= link_to "アカウント作成", new_user_path, class: "nav2" %>
+      </div>
     <% end %>
   </div>
   
 </header>
+
+<script>
+  if ($('.nav').hasClass('.open-nav')) {
+    $('.nav').removeClass('.open-nav')
+  }
+  
+  $('.fa-bars').on('click', function(){
+      $('.sp-navbar').toggleClass('open-nav');
+      $('.navbar').toggleClass('black');
+      $('.fa-bars').toggleClass('fa-times');
+    });
+</script>
+

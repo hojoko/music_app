@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
+@media (min-width: 1000px) {
+ 
 /* index */
  .posts {
    width: 90%;
@@ -312,3 +314,159 @@
   color: white;
   transition: all 0.5s ease;
  }
+}
+
+
+@media (max-width: 1000px) {
+ 
+ .new-youtube {
+   width: 75%;
+   margin: 15% 0 0 20%;
+ }
+ 
+ .new-youtube-input > input,.field_with_errors > input {
+   padding: 0.5rem;
+   border: none;
+   width: 75%;
+   border-bottom: 1px solid black;
+   position: relative;
+   z-index: -1;
+ }
+ 
+ .new-youtube-input > input:focus,.field_with_errors > input:focus{
+   outline: none;
+   border-bottom: 3px solid salmon;
+ }
+ 
+ .submit {
+  margin: 5rem 4rem;
+  width: 60%;
+  padding: 0.5rem;
+  background: none;
+  color: salmon;
+  border: 1px solid salmon;
+  transition: all 0.3s ease;
+  font-size: 20px;
+ }
+ 
+ .new-post-text {
+  width: 75%;
+  margin: 10% 0 0 20%;
+  color: white;
+ }
+ 
+ .new-post-input > textarea,.field_with_errors > textarea {
+  width: 75%;
+  height: 4rem;
+  padding: 0.5em;
+  transition: all 0.5s ease;
+ }
+ 
+ .new-post-input > textarea:focus,.field_with_errors > textarea:focus {
+  outline: none;
+  border: 1px solid salmon;
+ }
+ 
+ .post {
+  margin: 2rem 0;
+   border: 2px solid lightseagreen;
+   border-radius: 10px;
+   transition: all 0.5s ease;
+   background: rgba(249,255,252,0.9);
+ }
+ 
+ .a-post {
+  width: 100%;
+  height: 100%;
+ }
+ 
+ .post-right,.show-post-right,.user-right {
+  width: 90%;
+  margin: 1rem auto;
+ }
+ 
+ .post-user-name,.show-post-user-name {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+ }
+ 
+ .post-text,.show-post-text {
+  text-align: center;
+  margin-bottom: 1rem;
+ }
+ 
+ .post-user-name > a,.show-post-user-name > a{
+  text-decoration: none;
+  color: black;
+  padding: 0 2rem;
+  border-bottom: 1px solid salmon;
+ }
+ 
+ .post-text > a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid salmon;
+ }
+ 
+ .post-like {
+  text-align: right;
+  margin-right: 0.5rem;
+ }
+ 
+ .post-like > div > a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid lightseagreen;
+ }
+ 
+ .post-left {
+  width: 100%;
+  margin: 0.5rem auto;
+ }
+ 
+ .youtube_url, {
+  width: 90%;
+  margin: 0 auto;
+ }
+ 
+ .youtube {
+  width: 100%;
+ }
+ 
+ 
+ .show-post {
+   border: 2px solid lightseagreen;
+   border-radius: 10px;
+   transition: all 0.5s ease;
+   background: rgba(249,255,252,0.9);
+ }
+ 
+ .show-post-like {
+  width: 33%;
+  margin-top: 1rem;
+  float: right;
+ }
+ 
+ .edit,.destroy {
+  border: 1px solid salmon;
+  border-radius: 5px;
+  color: salmon;
+  width: 25%;
+  text-align: center;
+  padding: 0.3rem;
+  float: left;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  left: 1.5rem;
+ }
+ 
+ .show-youtube-url {
+  width: 90%;
+  margin: 4rem auto 0.5rem;
+ }
+ 
+ .show-youtube {
+  width: 100%;
+ }
+ 
+}
