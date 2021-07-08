@@ -13,18 +13,9 @@
   </head>
 
   <body>
-    <% if current_page?(new_post_path) || current_page?(new_user_path) || current_page?(login_path) || current_page?(root_path) %>
-      <div class="background-100vh">
         <%= render 'layouts/header' %>
         <%= render 'layouts/flash' %>
         <%= yield %>
-      </div>
-    <% else %>
-      <div class="background">
-        <%= render 'layouts/header' %>
-        <%= render 'layouts/flash' %>
-        <%= yield %>
-      </div>
-    <% end %>
+  
   </body>
 </html>
