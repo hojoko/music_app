@@ -1,6 +1,6 @@
-<% if flash.any? %>
-  <div class="flash-container">
+<div class="flash-container">
+  <% if flash.any? %>
     <div class="alert"><%= flash[:alert] %></div>
     <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
   </div>
-<% end %>
