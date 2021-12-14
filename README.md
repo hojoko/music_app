@@ -6,7 +6,7 @@ YoutubeのURLより音楽を共有するWebアプリケーションです。
 レスポンシブ対応しているのでスマホで利用することもできます。
 
 URLはこちら  
-http://musicolor.herokuapp.com
+https://musicolor.herokuapp.com
 
 ![2021-11-23](https://user-images.githubusercontent.com/62203578/142884877-b3fc67ba-4738-4706-8d28-b4cf4cd1e1ea.png)
 
