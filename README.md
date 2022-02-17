@@ -28,3 +28,7 @@ https://musicolor.herokuapp.com
 * いいね機能(Ajax)
 * コメント機能(Ajax)
 * ページネーション(kaminari)
+
+## ER図
+
+<img width="763" alt="musicolor_ER" src="https://user-images.githubusercontent.com/62203578/154503422-889b5f43-cf1a-4482-b420-b8454989509c.png">
